@@ -30,7 +30,7 @@ For this weekend challenge you'll be expanding on a movie management application
 Genres can be applied to many different movies. Movies can have multiple genres. This is Many-to-Many! Junction Table time!
 
 We've given you the database complete with a junction table and data for `movies_genres`.
- 
+
 ### Movie Poster Images
 We've added some movie posters in the `public/images` folder, and the database is set up to use them. If you want your own posters, you'll want to add the files there!
 
