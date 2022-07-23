@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     // yield takeEvery('FETCH_SELECTED_MOVIE', fetchSelectedMovie);
+    yield takeEvery('FETCH_GENRES', fetchGenres)
 }
 
 function* fetchAllMovies() {
@@ -37,6 +38,33 @@ function* fetchAllMovies() {
 //     }
 //     catch(error) {
 //         console.log('error in fetchSelectedMovie', error)
+//     }
+// }
+
+function* fetchGenres(action) {
+    // get all movies from the DB
+    try {
+        const id = action.payload;
+        console.log('id in fetchGenres', id)
+
+        const response = yield axios.get(`/api/genre/${id}`);
+        console.log('get all:', genres.data);
+        yield put({ type: 'SET_GENRES', payload: response.data });
+
+    } catch(error) {
+        console.log('error in fetchGenres', error);
+    }
+        
+}
+// function* fetchSearch(action) {
+//     try {
+//         const searchInput = action.payload;
+//         console.log('in fetchSearch, searchInput', searchInput)
+
+//         const response = yield axios.get(`/api/search/${searchInput}`);
+//         yield put({ type: 'SET_SEARCH', payload: response.data.data});
+//     } catch (error) {
+//         console.log('Error fetching in fetchSearch:', error);
 //     }
 // }
 
@@ -63,7 +91,7 @@ const genres = (state = [], action) => {
     }
 }
 
-const selectedMovie = (state = [], action) => {
+const selectedMovie = (state = {}, action) => {
     switch(action.type) {
         case 'SELECT_MOVIE':
             return action.payload;

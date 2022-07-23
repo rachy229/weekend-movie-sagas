@@ -16,7 +16,13 @@ function MovieItem ({movie, title}) {
             dispatch({
             type: 'SELECT_MOVIE',
             payload: movie
+        }),
+
+        dispatch({
+            type: 'FETCH_GENRES',
+            payload: movie.id
         })
+        console.log('movie.id in handlePosterClick', movie.id)
         console.log('movie in handlePosterClick', movie)
     }
 
