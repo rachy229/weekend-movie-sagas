@@ -4,8 +4,14 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 
 function Details() {
 
+    //the movie object that was clicked on
     const selectedMovie = useSelector(store => store.selectedMovie);
+    console.log('selectedMovie in Details component', selectedMovie);
+
+    //object 
     const genres = useSelector(store => store.genres)
+    console.log('genres in Details component', genres);
+
 
     const {id} = useParams();
     console.log('id is', {id});

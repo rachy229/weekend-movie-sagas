@@ -6,9 +6,11 @@ import './MovieList.css'
 function MovieList() {
 
     const dispatch = useDispatch();
+
+    //full list of movies from redux store
     const movies = useSelector(store => store.movies);
 
-
+    //get movies on page load
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
@@ -20,11 +22,8 @@ function MovieList() {
             <section className="movies">
                 {movies.map((movie) => {
                     return (
-                        < MovieItem key={movie.id} title={movie.title} poster={movie.poster} description={movie.description} movie={movie}/>
-                        // <div key={movie.id} >
-                        //     <h3>{movie.title}</h3>
-                        //     <img onClick={handlePosterClick} src={movie.poster} alt={movie.title}/>
-                        // </div>
+                        //returns a singlar movie
+                        < MovieItem key={movie.id} movie={movie}/>
                     );
                 })}
             </section>
