@@ -10,13 +10,14 @@ function MovieItem ({movie, title}) {
     const dispatch = useDispatch();
 
 
-    const handlePosterClick = () => {
+    const handlePosterClick = (movie) => {
         // history.push(`/details/${movie.id}`);
         // console.log('the movie clicked', movie.id, movie.title);
             dispatch({
             type: 'SELECT_MOVIE',
             payload: movie
         })
+        console.log('movie in handlePosterClick', movie)
     }
 
     // function* handlePosterClick(movie, id) {
@@ -33,11 +34,13 @@ function MovieItem ({movie, title}) {
             <div>
                 <Link to={`/details/${movie.id}`}>
                 <h3>{movie.title}</h3>
-                <img onClick={handlePosterClick} src={movie.poster} alt={movie.title}/>
+                <img onClick={() => handlePosterClick(movie)} src={movie.poster} alt={movie.title}/>
                 </Link>
             </div>
         </>
     )
 }
+
+
 
 export default MovieItem;
