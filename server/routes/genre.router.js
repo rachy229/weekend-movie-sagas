@@ -7,7 +7,7 @@ router.get('/:id', (req, res) => {
   const id = req.params.id;
   console.log('id in router.get', id);
 
-  // Add query to get all genres
+  // query to get all genres
   const queryText = `SELECT * FROM "genres" 
   JOIN "movies_genres" ON "genres"."id" = "movies_genres"."genre_id" 
   JOIN "movies" ON "movies"."id" = "movies_genres"."movie_id" WHERE "movies"."id" = '${id}';`;

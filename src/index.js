@@ -31,18 +31,9 @@ function* fetchAllMovies() {
         
 }
 
-// function * fetchSelectedMovie() {
-//     try{
-//         const selectedMovie = yield axios.get(`/api/movie/${id}`);
-//         yield put({type: 'SELECT_MOVIE', payload: selectedMovie.data})
-//     }
-//     catch(error) {
-//         console.log('error in fetchSelectedMovie', error)
-//     }
-// }
 
 function* fetchGenres(action) {
-    // get all movies from the DB
+    // get all genres for a specific movie id
     try {
         const id = action.payload;
         console.log('id in fetchGenres', id)
@@ -56,17 +47,6 @@ function* fetchGenres(action) {
     }
         
 }
-// function* fetchSearch(action) {
-//     try {
-//         const searchInput = action.payload;
-//         console.log('in fetchSearch, searchInput', searchInput)
-
-//         const response = yield axios.get(`/api/search/${searchInput}`);
-//         yield put({ type: 'SET_SEARCH', payload: response.data.data});
-//     } catch (error) {
-//         console.log('Error fetching in fetchSearch:', error);
-//     }
-// }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -91,6 +71,8 @@ const genres = (state = [], action) => {
     }
 }
 
+
+//Used to store the specific movie object that the user has clicked
 const selectedMovie = (state = {}, action) => {
     switch(action.type) {
         case 'SELECT_MOVIE':
