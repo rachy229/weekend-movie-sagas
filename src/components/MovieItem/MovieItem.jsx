@@ -45,7 +45,7 @@ function MovieItem ({movie, title}) {
             <div>
                 <Link to={`/details/${movie.id}`}>
                 <h3>{movie.title}</h3>
-                <img onClick={() => handlePosterClick(movie)} src={movie.poster} alt={movie.title}/>
+                <img className='poster' onClick={() => handlePosterClick(movie)} src={movie.poster} alt={movie.title}/>
                 </Link>
             </div>
         </>

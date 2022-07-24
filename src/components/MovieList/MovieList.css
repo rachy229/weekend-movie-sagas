@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(229, 250, 255);
+    background: linear-gradient(45deg, rgb(229, 250, 255), rgb(168, 206, 215));
 }
 
 .movies {
@@ -20,5 +20,12 @@ body{
 
 .card:hover {
     box-shadow: 10px 15px 20px 10px rgba(3, 3, 3, 0.2);
+}
+
+.poster{
+    border-width: 10px;
+    border-color: white;
+    border-style: solid;
+    box-shadow: 5px 10px 10px 5px rgba(19, 18, 18, 0.2);
 }
 
