@@ -27,6 +27,8 @@ function MovieItem ({movie, title}) {
             payload: movie.id
         })
 
+        history.push(`/details/${movie.id}`)
+
         // console.log('movie.id in handlePosterClick', movie.id)
         // console.log('movie in handlePosterClick', movie)
     }
@@ -42,11 +44,11 @@ function MovieItem ({movie, title}) {
 
     return(
         <>
-            <div>
-                <Link to={`/details/${movie.id}`}>
+            <div onClick={() => handlePosterClick(movie)}>
+                {/* <Link to={`/details/${movie.id}`}> */}
                 <h3>{movie.title}</h3>
-                <img className='poster' onClick={() => handlePosterClick(movie)} src={movie.poster} alt={movie.title}/>
-                </Link>
+                <img className='poster'  src={movie.poster} alt={movie.title}/>
+                {/* </Link> */}
             </div>
         </>
     )

@@ -1,5 +1,6 @@
 body{
     background: linear-gradient(45deg, rgb(229, 250, 255), rgb(168, 206, 215));
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .movies {
