@@ -31,19 +31,21 @@ function Details() {
             <button onClick={() => {history.push('/')}}>Back to List</button>
 
             {/* all of the details */}
-            <h3>{selectedMovie.title}</h3>
+            <h2>{selectedMovie.title}</h2>
             <div className="details">
                 <img className="poster-details" src={selectedMovie.poster}></img>
                 <h3 className="description-box">{selectedMovie.description}</h3>
             </div>
 
             {/* listing the genres */}
-            {genres.map((genre, i) => {
-                return (
-                    <h4 key={i}>{genre.name}</h4>
-                )
-            })}
-
+            <div className="genres-list">
+                <h3>Genres:</h3>
+                    {genres.map((genre, i) => {
+                        return (
+                            <p  key={i}>{genre.name}</p>
+                        )
+                    })}
+            </div>
         </div>
     )
 }

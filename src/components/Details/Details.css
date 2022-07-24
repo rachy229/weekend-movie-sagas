@@ -20,5 +20,10 @@
 .details{
     display: inline-flex;
     align-items: center;
-    margin: 50px;
+    margin-left: 50px;
+}
+
+.genres-list{
+    text-align: left;
+    margin-left: 75px;
 }
