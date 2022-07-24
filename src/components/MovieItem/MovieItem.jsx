@@ -15,9 +15,14 @@ function MovieItem ({movie, title}) {
         // console.log('the movie clicked', movie.id, movie.title);
 
         //select the specific movie that was clicked
+        // dispatch({
+        //     type: 'SELECT_MOVIE',
+        //     payload: movie
+        // }),
+
         dispatch({
-            type: 'SELECT_MOVIE',
-            payload: movie
+            type: 'FETCH_DETAILS',
+            payload: movie.id
         }),
 
         //getting the genres for the movie that was clicked
@@ -27,7 +32,7 @@ function MovieItem ({movie, title}) {
             payload: movie.id
         })
 
-        history.push(`/details/${movie.id}`)
+        history.push(`/details/${id}`)
 
         // console.log('movie.id in handlePosterClick', movie.id)
         // console.log('movie in handlePosterClick', movie)
