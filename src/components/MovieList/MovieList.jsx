@@ -19,14 +19,16 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-            <section className="movies">
-                {movies.map((movie) => {
-                    return (
-                        //returns a singlar movie
-                        < MovieItem key={movie.id} movie={movie}/>
-                    );
-                })}
-            </section>
+                <section className="movies">
+                    {movies.map((movie) => {
+                        return (
+                            //returns a singlar movie
+                            <div key={movie.id} className='card'>
+                                < MovieItem movie={movie}/>
+                            </div>
+                        );
+                    })}
+                </section>
         </main>
 
     );

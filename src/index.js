@@ -39,13 +39,12 @@ function* fetchGenres(action) {
         console.log('id in fetchGenres', id)
 
         const response = yield axios.get(`/api/genre/${id}`);
-        console.log('get all:', genres.data);
+        console.log('response.data in fetchGenres', response.data);
         yield put({ type: 'SET_GENRES', payload: response.data });
 
     } catch(error) {
         console.log('error in fetchGenres', error);
     }
-        
 }
 
 // Create sagaMiddleware

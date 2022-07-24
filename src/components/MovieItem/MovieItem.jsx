@@ -26,7 +26,7 @@ function MovieItem ({movie, title}) {
             type: 'FETCH_GENRES',
             payload: movie.id
         })
-        
+
         // console.log('movie.id in handlePosterClick', movie.id)
         // console.log('movie in handlePosterClick', movie)
     }
