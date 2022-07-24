@@ -20,4 +20,20 @@ router.get('/:id', (req, res) => {
   })
 });
 
+router.get('/details/:id', (req, res) => {
+
+  const id = req.params.id;
+  console.log('id in details router.get', id);
+
+  // query to get all genres
+  const queryText = `SELECT * FROM "movies" WHERE "movies"."id" = '${id}';`;
+  pool.query(queryText)
+  .then(result => {
+    res.send(result.rows);
+  }).catch(error => {
+    console.log('error in genre.router GET', error)
+  res.sendStatus(500)
+  })
+});
+
 module.exports = router;

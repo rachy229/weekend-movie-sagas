@@ -15,7 +15,8 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     // yield takeEvery('FETCH_SELECTED_MOVIE', fetchSelectedMovie);
-    yield takeEvery('FETCH_GENRES', fetchGenres)
+    yield takeEvery('FETCH_GENRES', fetchGenres);
+    yield takeEvery('FETCH_DETAILS', fetchDetails);
 }
 
 function* fetchAllMovies() {
@@ -47,6 +48,21 @@ function* fetchGenres(action) {
     }
 }
 
+function* fetchDetails(action) {
+    // get all details for a specific movie id
+    try {
+        const id = action.payload;
+        console.log('id in fetchDetails', id)
+
+        const response = yield axios.get(`/api/genre/details/${id}`);
+        console.log('response.data in fetchDetails', response.data);
+        yield put({ type: 'SET_DETAILS', payload: response.data });
+
+    } catch(error) {
+        console.log('error in fetchDetails', error);
+    }
+}
+
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
@@ -70,23 +86,33 @@ const genres = (state = [], action) => {
     }
 }
 
-
-//Used to store the specific movie object that the user has clicked
-const selectedMovie = (state = {}, action) => {
-    switch(action.type) {
-        case 'SELECT_MOVIE':
+const details = (state = {}, action) => {
+    switch (action.type) {
+        case 'SET_DETAILS':
             return action.payload;
         default:
             return state;
     }
 }
 
+
+// //Used to store the specific movie object that the user has clicked
+// const selectedMovie = (state = {}, action) => {
+//     switch(action.type) {
+//         case 'SELECT_MOVIE':
+//             return action.payload;
+//         default:
+//             return state;
+//     }
+// }
+
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
-        selectedMovie,
+        // selectedMovie,
+        details
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
