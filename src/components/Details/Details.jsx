@@ -25,9 +25,9 @@ function Details() {
     const {id} = useParams();
     console.log('id in Details', id);
 
-    // useEffect(() => {
-    //     dispatch({type: 'FETCH_DETAILS', payload: id})
-    // }, [])
+    useEffect(() => {
+        dispatch({type: 'FETCH_DETAILS', payload: id})
+    }, [])
 
     
     // console.log('movie in Details', movie)
