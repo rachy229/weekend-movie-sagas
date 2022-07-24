@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import './Details.css';
 
 function Details() {
 
@@ -31,8 +32,10 @@ function Details() {
 
             {/* all of the details */}
             <h3>{selectedMovie.title}</h3>
-            <img src={selectedMovie.poster}></img>
-            <p>{selectedMovie.description}</p>
+            <div className="details">
+                <img className="poster-details" src={selectedMovie.poster}></img>
+                <h3 className="description-box">{selectedMovie.description}</h3>
+            </div>
 
             {/* listing the genres */}
             {genres.map((genre, i) => {

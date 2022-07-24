@@ -1,0 +1,24 @@
+.poster-details{
+    height: 300px;
+    margin: 25px;
+    border-width: 10px;
+    border-color: white;
+    border-style: solid;
+    box-shadow: 5px 10px 10px 5px rgba(19, 18, 18, 0.2);
+}
+
+.description-box{
+    background-color: white;
+    /* margin-left: 100px; */
+    /* margin-right: 100px; */
+    width: 60%;
+    padding: 25px;
+    border-radius: 15px;
+
+}
+
+.details{
+    display: inline-flex;
+    align-items: center;
+    margin: 50px;
+}
