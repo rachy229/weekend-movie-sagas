@@ -8,9 +8,9 @@ This is application allows a user to view a list of movies. They are able to sel
 
 ## Screen Shot
 
-![](<img width="1512" alt="Screen Shot 2022-07-24 at 5 48 39 PM" src="https://user-images.githubusercontent.com/97415526/180669049-883c14f3-d9f5-4375-a525-dceb21655d3b.png">)
+(<img width="1512" alt="Screen Shot 2022-07-24 at 5 48 39 PM" src="https://user-images.githubusercontent.com/97415526/180669049-883c14f3-d9f5-4375-a525-dceb21655d3b.png">)
 
-![](<img width="1347" alt="Screen Shot 2022-07-24 at 5 48 31 PM" src="https://user-images.githubusercontent.com/97415526/180669028-3559916b-004c-4b05-90a4-72fb89c9d825.png">)
+(<img width="1347" alt="Screen Shot 2022-07-24 at 5 48 31 PM" src="https://user-images.githubusercontent.com/97415526/180669028-3559916b-004c-4b05-90a4-72fb89c9d825.png">)
 
 ### Prerequisites
 
