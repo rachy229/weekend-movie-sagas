@@ -22,12 +22,12 @@ function Details() {
     console.log('genres in Details component', genres);
 
 
-    const {id} = useParams();
-    console.log('id in Details', id);
+    // const {id} = useParams();
+    // console.log('id in Details', id);
 
-    useEffect(() => {
-        dispatch({type: 'FETCH_DETAILS', payload: id})
-    }, [])
+    // useEffect(() => {
+    //     dispatch({type: 'FETCH_DETAILS', payload: details.id})
+    // }, [])
 
     
     // console.log('movie in Details', movie)
@@ -43,13 +43,13 @@ function Details() {
             {/* <h2>{selectedMovie.title}</h2> */}
                 {details.map((detailItem => { 
                     return (
-                        <>
+                        <div key={detailItem.id}>
                             <h2>{detailItem.title}</h2>
                             <div className="details">
                                 <img className="poster-details" src={detailItem.poster}></img>
                                 <h3 className="description-box">{detailItem.description}</h3>
                             </div>
-                        </>
+                        </div>
 
                     )
             }))}
